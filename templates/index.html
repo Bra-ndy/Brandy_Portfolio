@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<!-- ===== HERO ===== -->
 <section id="home" class="hero-section">
   <div class="hero-row">
     <div class="hero-text">
@@ -18,18 +19,10 @@
         <a href="{{ url_for('contact') }}" class="btn-outline">Contact</a>
       </div>
     </div>
-    <div class="hero-image-wrapper">
-      <div class="hero-avatar">
-        <i class="fas fa-user-astronaut"></i>
-      </div>
-    
-      <div class="hero-decorative-circle"></div>
-      <div class="hero-decorative-dots"></div>
-    </div>
   </div>
 </section>
 
-
+<!-- ===== QUICK LINKS ===== -->
 <section class="quick-links">
   <div class="quick-grid">
     <div class="quick-card">
@@ -59,7 +52,7 @@
   </div>
 </section>
 
-
+<!-- ===== STATS ===== -->
 <section class="stats-section">
   <div class="stats-grid">
     <div class="stat-item">
@@ -81,7 +74,7 @@
   </div>
 </section>
 
-
+<!-- ===== FEATURED PROJECTS ===== -->
 <section class="featured-projects">
   <h2 class="section-title">Featured Projects</h2>
   <p class="section-subtitle">A selection of my recent work</p>
@@ -101,8 +94,16 @@
           {% endfor %}
         </div>
         <div class="project-links">
-          <a href="{{ project.github }}" target="_blank"><i class="fab fa-github"></i> Code</a>
-          <a href="{{ project.demo }}" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+          {% if project.github and project.github != '#' %}
+          <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> Code
+          </a>
+          {% endif %}
+          {% if project.demo and project.demo != '#' %}
+          <a href="{{ project.demo }}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -114,7 +115,7 @@
   </div>
 </section>
 
-
+<!-- ===== TESTIMONIALS ===== -->
 <section class="testimonials-section">
   <h2 class="section-title">What People Say</h2>
   <div class="testimonials-grid">
@@ -133,7 +134,7 @@
   </div>
 </section>
 
-
+<!-- ===== CTA SECTION ===== -->
 <section class="cta-section">
   <div class="cta-content">
     <h2>Ready to Start a Project?</h2>
@@ -142,6 +143,7 @@
       <a href="{{ url_for('contact') }}" class="btn-primary cta-btn">Get in Touch</a>
       <a href="https://wa.me/254791416755?text=Hi%20Brandon%2C%20I'm%20interested%20in%20working%20with%20you!" 
          target="_blank" 
+         rel="noopener noreferrer"
          class="btn-whatsapp cta-whatsapp">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
