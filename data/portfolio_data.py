@@ -95,30 +95,29 @@ SERVICES = [
 ]
 
 PROJECTS = [
-   
     {
         'title': 'MediPredict - Drug Recommendation System',
         'description': 'Web-based drug recommendation system using Python and machine learning techniques to process health-related inputs and provide drug recommendations.',
         'image_icon': 'fa-brain',
         'technologies': ['Python', 'Flask', 'SQL', 'Machine Learning'],
-        'github': '#',
-        'demo': '#'
+        'github': 'https://github.com/Bra-ndy',
+        'demo': 'https://medipredict-frontend-9zec.onrender.com/'
     },
     {
         'title': 'VCH - Online Investment Platform',
         'description': 'Web-based virtual investment platform enabling members to participate in vehicle-related investment activities with Flask and database technologies.',
         'image_icon': 'fa-car',
         'technologies': ['Python', 'Flask', 'SQL'],
-        'github': '#',
-        'demo': '#'
+        'github': 'https://github.com/Bra-ndy',
+        'demo': 'https://vch-production1.onrender.com'
     },
     {
         'title': 'Personal Portfolio Website',
         'description': 'Responsive portfolio website presenting technical skills, projects, education, and professional experience using HTML, CSS, JavaScript, and Flask.',
         'image_icon': 'fa-user',
         'technologies': ['HTML', 'CSS', 'JavaScript', 'Python/Flask'],
-        'github': '#',
-        'demo': '#'
+        'github': 'https://github.com/Bra-ndy',
+        'demo': 'https://brandy-portfolio.onrender.com'
     }
 ]
 

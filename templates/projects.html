@@ -22,8 +22,16 @@
           {% endfor %}
         </div>
         <div class="project-links">
-          <a href="{{ project.github }}" target="_blank"><i class="fab fa-github"></i> Code</a>
-          <a href="{{ project.demo }}" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+          {% if project.github and project.github != '#' %}
+          <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> Code
+          </a>
+          {% endif %}
+          {% if project.demo and project.demo != '#' %}
+          <a href="{{ project.demo }}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>
