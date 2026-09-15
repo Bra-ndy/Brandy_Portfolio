@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio · Kipkosgei Brandon{% endblock %}
+
+{% block content %}
+<section class="projects-section">
+  <h2 class="section-title">Portfolio</h2>
+  <p class="section-subtitle">A selection of my recent work and side projects.</p>
+  
+  <div class="projects-grid">
+    {% for project in projects %}
+    <div class="project-card">
+      <div class="project-img">
+        <i class="fas {{ project.image_icon }}"></i>
+      </div>
+      <div class="project-body">
+        <h4>{{ project.title }}</h4>
+        <p class="text-light">{{ project.description }}</p>
+        <div class="project-tech">
+          {% for tech in project.technologies %}
+          <span>{{ tech }}</span>
+          {% endfor %}
+        </div>
+        <div class="project-links">
+          <a href="{{ project.github }}" target="_blank"><i class="fab fa-github"></i> Code</a>
+          <a href="{{ project.demo }}" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

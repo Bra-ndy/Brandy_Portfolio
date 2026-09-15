@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Blog · Kipkosgei Brandon{% endblock %}
+
+{% block content %}
+<section class="blog-section">
+  <h2 class="section-title">Blog</h2>
+  <p class="section-subtitle">Thoughts on design, development, and technology.</p>
+  
+  <div class="blog-grid">
+    {% for post in blog_posts %}
+    <div class="card blog-card">
+      <div class="blog-meta">
+        <span class="blog-category">{{ post.category }}</span>
+        <span class="blog-date">{{ post.date }}</span>
+      </div>
+      <h4>{{ post.title }}</h4>
+      <p class="text-light">{{ post.excerpt }}</p>
+      <a href="#" class="blog-link">Read More →</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

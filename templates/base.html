@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Kipkosgei Brandon · IT Specialist{% endblock %}</title>
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="logo">K<span>B</span></div>
+    <div class="subhead">{{ personal.title }}</div>
+  </div>
+  
+  <nav class="nav-side">
+    <ul>
+      <li><a href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}class="active"{% endif %}>
+        <i class="fas fa-home"></i> Home
+      </a></li>
+      <li><a href="{{ url_for('about') }}" {% if request.endpoint == 'about' %}class="active"{% endif %}>
+        <i class="fas fa-user"></i> About Me
+      </a></li>
+      <li><a href="{{ url_for('services') }}" {% if request.endpoint == 'services' %}class="active"{% endif %}>
+        <i class="fas fa-cog"></i> What I Do
+      </a></li>
+      <li><a href="{{ url_for('resume') }}" {% if request.endpoint == 'resume' %}class="active"{% endif %}>
+        <i class="fas fa-file-alt"></i> Resume
+      </a></li>
+      <li><a href="{{ url_for('projects') }}" {% if request.endpoint == 'projects' %}class="active"{% endif %}>
+        <i class="fas fa-code"></i> Portfolio
+      </a></li>
+      <li><a href="{{ url_for('blog') }}" {% if request.endpoint == 'blog' %}class="active"{% endif %}>
+        <i class="fas fa-pen-fancy"></i> Blog
+      </a></li>
+      <li><a href="{{ url_for('contact') }}" {% if request.endpoint == 'contact' %}class="active"{% endif %}>
+        <i class="fas fa-envelope"></i> Contact
+      </a></li>
+      <li><a href="#" class="hire-btn"><i class="fas fa-handshake"></i> Hire Me</a></li>
+    </ul>
+  </nav>
+  
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="{{ social.github }}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="{{ social.linkedin }}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="{{ social.twitter }}" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="{{ social.dribbble }}" target="_blank" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+    </div>
+    <p>&copy; {{ current_year }} {{ personal.name }}</p>
+  </div>
+</aside>
+
+
+<main class="main">
+  
+  
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  
+  {% block content %}{% endblock %}
+  
+  
+  <footer class="footer">
+    <span>&copy; {{ current_year }} {{ personal.name }} — {{ personal.title }}</span>
+    <span class="footer-links">
+      <a href="{{ social.github }}" target="_blank">GitHub</a>
+      <a href="{{ social.linkedin }}" target="_blank">LinkedIn</a>
+      <a href="{{ social.twitter }}" target="_blank">Twitter</a>
+    </span>
+  </footer>
+</main>
+
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

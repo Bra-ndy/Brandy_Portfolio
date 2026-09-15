@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}About Me · Kipkosgei Brandon{% endblock %}
+
+{% block content %}
+<section class="about-section">
+  <h2 class="section-title">About Me</h2>
+  <div class="based"><i class="fas fa-map-marker-alt"></i> Based in {{ personal.location }}.</div>
+  
+  <div class="about-grid">
+    <div class="about-text">
+      <p>{{ personal.bio }}</p>
+      <p style="margin-top:16px;color:var(--text-light);">
+        I believe in creating digital experiences that are not only visually stunning 
+        but also intuitive and accessible. My approach combines empathy, research, 
+        and technical excellence to deliver solutions that truly make a difference.
+      </p>
+      
+      <div class="about-details">
+        <div><i class="fas fa-envelope"></i> {{ personal.email }}</div>
+        <div><i class="fas fa-phone-alt"></i> {{ personal.phone }}</div>
+        <div><i class="fas fa-map-marker-alt"></i> {{ personal.location }}</div>
+      </div>
+    </div>
+    
+    <div class="about-cards">
+      <div class="card">
+        <i class="fas fa-rocket"></i>
+        <h4>Mission</h4>
+        <p>{{ personal.mission }}</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-heart"></i>
+        <h4>Philosophy</h4>
+        <p>{{ personal.philosophy }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonials-section">
+  <h2 class="section-title">What People Say</h2>
+  <div class="testimonials-grid">
+    {% for testimonial in testimonials[:3] %}
+    <div class="testimonial-card">
+      <i class="fas fa-quote-left"></i>
+      <p class="text-light">{{ testimonial.text }}</p>
+      <div class="testimonial-author">
+        <h5>{{ testimonial.name }}</h5>
+        <span class="text-light">{{ testimonial.position }}, {{ testimonial.organization }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

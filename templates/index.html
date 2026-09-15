@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Kipkosgei Brandon · IT Specialist{% endblock %}
+
+{% block content %}
+
+<section id="home" class="hero-section">
+  <div class="hero-row">
+    <div class="hero-text">
+      <h1>Welcome<br /><span>{{ personal.name }}</span></h1>
+      <div class="tagline" id="typing-text">I'm IT Specialist</div>
+      <p>{{ personal.bio }}</p>
+      <div class="hero-badge">
+        <i class="fas fa-map-pin"></i> Based in {{ personal.location }}.
+      </div>
+      <div class="hero-buttons">
+        <a href="{{ url_for('projects') }}" class="btn-primary">View Projects</a>
+        <a href="{{ url_for('contact') }}" class="btn-outline">Contact</a>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <div class="hero-avatar">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+    
+      <div class="hero-decorative-circle"></div>
+      <div class="hero-decorative-dots"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="quick-links">
+  <div class="quick-grid">
+    <div class="quick-card">
+      <div class="quick-card-icon">
+        <i class="fas fa-user"></i>
+      </div>
+      <h4>About Me</h4>
+      <p>Learn more about my background and approach.</p>
+      <a href="{{ url_for('about') }}" class="btn-outline-small">Read More →</a>
+    </div>
+    <div class="quick-card">
+      <div class="quick-card-icon">
+        <i class="fas fa-cog"></i>
+      </div>
+      <h4>What I Do</h4>
+      <p>Explore my services and areas of expertise.</p>
+      <a href="{{ url_for('services') }}" class="btn-outline-small">View Services →</a>
+    </div>
+    <div class="quick-card">
+      <div class="quick-card-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h4>Portfolio</h4>
+      <p>See my latest projects and case studies.</p>
+      <a href="{{ url_for('projects') }}" class="btn-outline-small">View Projects →</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number" data-count="24">0</div>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="4">0</div>
+      <span class="stat-label">Years of Experience</span>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="15">0</div>
+      <span class="stat-label">Technologies</span>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="10">0</div>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="featured-projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <p class="section-subtitle">A selection of my recent work</p>
+  
+  <div class="projects-grid">
+    {% for project in projects[:3] %}
+    <div class="project-card">
+      <div class="project-img">
+        <i class="fas {{ project.image_icon }}"></i>
+      </div>
+      <div class="project-body">
+        <h4>{{ project.title }}</h4>
+        <p class="text-light">{{ project.description|truncate(100) }}</p>
+        <div class="project-tech">
+          {% for tech in project.technologies[:3] %}
+          <span>{{ tech }}</span>
+          {% endfor %}
+        </div>
+        <div class="project-links">
+          <a href="{{ project.github }}" target="_blank"><i class="fab fa-github"></i> Code</a>
+          <a href="{{ project.demo }}" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <div style="text-align:center;margin-top:30px;">
+    <a href="{{ url_for('projects') }}" class="btn-primary">View All Projects</a>
+  </div>
+</section>
+
+
+<section class="testimonials-section">
+  <h2 class="section-title">What People Say</h2>
+  <div class="testimonials-grid">
+    {% for testimonial in testimonials[:3] %}
+    <div class="testimonial-card">
+      <div class="testimonial-quote">
+        <i class="fas fa-quote-left"></i>
+      </div>
+      <p class="text-light">{{ testimonial.text }}</p>
+      <div class="testimonial-author">
+        <h5>{{ testimonial.name }}</h5>
+        <span class="text-light">{{ testimonial.position }}, {{ testimonial.organization }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="cta-content">
+    <h2>Ready to Start a Project?</h2>
+    <p>Let's work together to create something amazing.</p>
+    <div class="cta-buttons">
+      <a href="{{ url_for('contact') }}" class="btn-primary cta-btn">Get in Touch</a>
+      <a href="https://wa.me/254791416755?text=Hi%20Brandon%2C%20I'm%20interested%20in%20working%20with%20you!" 
+         target="_blank" 
+         class="btn-whatsapp cta-whatsapp">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

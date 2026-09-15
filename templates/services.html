@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}What I Do · Kipkosgei Brandon{% endblock %}
+
+{% block content %}
+<section class="services-section">
+  <h2 class="section-title">What I Do</h2>
+  <p class="section-subtitle">I offer a range of design and development services to help bring your ideas to life.</p>
+  
+  <div class="services-grid">
+    {% for service in services %}
+    <div class="card service-card">
+      <i class="fas {{ service.icon }}"></i>
+      <h4>{{ service.title }}</h4>
+      <p>{{ service.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process-section">
+  <h2 class="section-title">My Process</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-number">01</div>
+      <h4>Discovery</h4>
+      <p class="text-light">Research, user interviews, and requirements gathering.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">02</div>
+      <h4>Design</h4>
+      <p class="text-light">Wireframing, prototyping, and visual design.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">03</div>
+      <h4>Development</h4>
+      <p class="text-light">Building, testing, and iterating on the solution.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">04</div>
+      <h4>Launch</h4>
+      <p class="text-light">Deployment, monitoring, and continuous improvement.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

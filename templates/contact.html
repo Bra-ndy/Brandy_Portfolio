@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Contact · Kipkosgei Brandon{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-subtitle">Have a question or want to work together? Let's connect.</p>
+  
+  <div class="contact-grid">
+    
+    <div>
+      <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+          {{ form.name(class="form-control", placeholder="Full Name") }}
+          {% if form.name.errors %}
+            {% for error in form.name.errors %}
+              <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+        
+        <div class="form-group">
+          {{ form.email(class="form-control", placeholder="Email Address") }}
+          {% if form.email.errors %}
+            {% for error in form.email.errors %}
+              <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+        
+        <div class="form-group">
+          {{ form.subject(class="form-control", placeholder="Subject") }}
+        </div>
+        
+        <div class="form-group">
+          {{ form.message(class="form-control", placeholder="Message", rows="5") }}
+          {% if form.message.errors %}
+            {% for error in form.message.errors %}
+              <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+        
+        {{ form.submit(class="btn-primary btn-full") }}
+      </form>
+    </div>
+    
+    
+    <div class="contact-info">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-envelope"></i> {{ personal.email }}</p>
+      <p><i class="fas fa-phone-alt"></i> {{ personal.phone }}</p>
+      <p><i class="fas fa-map-marker-alt"></i> {{ personal.location }}</p>
+      
+      <div class="contact-social">
+        <a href="{{ social.github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="{{ social.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="{{ social.twitter }}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="{{ social.whatsapp }}" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,386 @@
+{% extends "base.html" %}
+
+{% block title %}Resume · Kipkosgei Brandon{% endblock %}
+
+{% block content %}
+<section class="resume-section">
+  <div class="resume-header">
+    <h2 class="section-title">Resume</h2>
+    <a href="{{ url_for('download_resume') }}" class="download-btn">
+      <i class="fas fa-download"></i> Download PDF
+    </a>
+  </div>
+  
+  <!-- ===== PROFESSIONAL SUMMARY ===== -->
+  <div class="resume-summary">
+    <h3 class="subsection-title"><i class="fas fa-user-tie"></i> Professional Summary</h3>
+    <p class="text-light" style="font-size:1.05rem;line-height:1.8;">
+      Computer Science graduate with 4 years of practical experience spanning IT support, networking, CCTV installation, systems administration, and web technologies. Experienced in configuring and troubleshooting computer systems and networks, supporting users, deploying wireless infrastructure, and developing technology-based projects using Python, Java, C, SQL, and SQLite. Combines strong technical problem-solving and algorithmic thinking with hands-on field experience to deliver reliable, secure, and practical IT solutions.
+    </p>
+  </div>
+  
+  <!-- ===== CORE SKILLS ===== -->
+  <h3 class="subsection-title"><i class="fas fa-star"></i> Core Skills</h3>
+  <div class="core-skills-grid">
+    <div class="core-skill-item">
+      <i class="fas fa-desktop"></i>
+      <span>IT Support and Technical Troubleshooting</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-network-wired"></i>
+      <span>Computer Networking and Network Configuration</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-video"></i>
+      <span>CCTV Installation and Maintenance</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-server"></i>
+      <span>Systems Administration</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-wifi"></i>
+      <span>Wireless Network Installation and Configuration</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-microchip"></i>
+      <span>Hardware Diagnostics and Maintenance</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-shield-alt"></i>
+      <span>Cybersecurity and ICT Security</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-code"></i>
+      <span>Web Design and Application Development</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-database"></i>
+      <span>Database Management and SQL</span>
+    </div>
+    <div class="core-skill-item">
+      <i class="fas fa-file-alt"></i>
+      <span>Technical Documentation and User Support</span>
+    </div>
+  </div>
+  
+  <!-- ===== EXPERIENCE ===== -->
+  <h3 class="subsection-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>Cyber Cafe Attendant</h4>
+        <span class="company">Kericho Cyber</span>
+      </div>
+      <div class="date">May 2026 - To Date · Kericho, Kenya</div>
+      <ul class="text-light experience-list">
+        <li>Supported customers in accessing digital services by processing government e-services and assisting users with online applications and transactions</li>
+        <li>Improved service efficiency by accurately handling civil registration, business licensing, land services, police clearance, and other government digital services for over 30 customers daily</li>
+        <li>Maintained operational computer equipment by performing printing, photocopying, machine repairs, and basic hardware troubleshooting</li>
+        <li>Reduced computer-related disruptions by diagnosing common hardware and software problems and providing basic technical support to users</li>
+        <li>Improved device usability for students by performing laptop updates and resolving basic technical issues, supporting several students and users</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>WiFi Installation Technician</h4>
+        <span class="company">Swift Broadband</span>
+      </div>
+      <div class="date">September 2025 - February 2026 · Tharaka Nithi County, Kenya</div>
+      <ul class="text-light experience-list">
+        <li>Improved wireless network coverage by 20% by conducting site surveys and optimizing access point placement, resulting in improved signal availability across installation sites</li>
+        <li>Configured wireless network infrastructure by setting up SSIDs, security protocols, wireless controllers, and access points, resulting in reliable connectivity for users</li>
+        <li>Reduced connectivity issues by identifying interference, dead zones, and client-association problems through systematic site surveys and WiFi analysis</li>
+        <li>Strengthened network reliability by monitoring network performance, managing firmware updates, and troubleshooting router and access-point issues</li>
+        <li>Improved technical consistency by documenting network layouts, device configurations, security settings, and installation requirements for many sites</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>ICT / Networking Attachee</h4>
+        <span class="company">County Government of Kericho</span>
+      </div>
+      <div class="date">May 2025 - August 2025 · Kericho, Kenya</div>
+      <ul class="text-light experience-list">
+        <li>Supported government ICT operations by assisting users with computer, network, and technology-related issues, contributing to efficient delivery of digital services</li>
+        <li>Improved user access to ICT services by troubleshooting hardware, software, connectivity, and basic system problems for 27 users</li>
+        <li>Supported deployment of network and CCTV infrastructure by conducting site surveys and assisting with installation planning and configuration</li>
+        <li>Maintained reliable ICT environments by documenting technical configurations, identifying faults, and escalating complex issues to the appropriate technical personnel</li>
+        <li>Supported digital government services by assisting with systems used for immigration, NTSA, KRA, judiciary, county services, civil registration, business licensing, land services, and police clearance</li>
+      </ul>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>Networking and CCTV Installation Technician</h4>
+        <span class="company">Kericho / Field Installations</span>
+      </div>
+      <div class="date">Kericho, Kenya</div>
+      <ul class="text-light experience-list">
+        <li>Improved security-system coverage by 20% by conducting site surveys and recommending optimal CCTV camera and network equipment placement</li>
+        <li>Supported reliable network deployments by assessing site requirements, identifying interference and dead zones, and assisting with installation planning</li>
+        <li>Configured network equipment by setting up wireless access points, SSIDs, security protocols, and VLANs for guest and staff environments</li>
+        <li>Maintained CCTV and networking infrastructure by troubleshooting equipment, updating firmware, testing connectivity, and resolving installation-related faults</li>
+        <li>Improved project documentation by recording network layouts, device configurations, installation requirements, and maintenance information for 7 large projects</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- ===== TECHNICAL SKILLS ===== -->
+  <h3 class="subsection-title"><i class="fas fa-code"></i> Technical Skills</h3>
+  <div class="skills-container">
+    <div class="skills-category">
+      <h4>Programming</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">C</span>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h4>Databases</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">SQLite</span>
+        <span class="skill-tag">MongoDB</span>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h4>Networking</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Wireless Networking</span>
+        <span class="skill-tag">WiFi Installation</span>
+        <span class="skill-tag">SSIDs</span>
+        <span class="skill-tag">VLANs</span>
+        <span class="skill-tag">Access Points</span>
+        <span class="skill-tag">Network Troubleshooting</span>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h4>Security</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Cybersecurity Fundamentals</span>
+        <span class="skill-tag">ICT Security</span>
+        <span class="skill-tag">CCTV Installation</span>
+        <span class="skill-tag">CCTV Maintenance</span>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h4>IT Support</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Operating System Support</span>
+        <span class="skill-tag">Hardware Diagnostics</span>
+        <span class="skill-tag">Computer Maintenance</span>
+        <span class="skill-tag">Mobile Device Support</span>
+        <span class="skill-tag">User Support</span>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h4>Development</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Web Design</span>
+        <span class="skill-tag">Web Application Development</span>
+        <span class="skill-tag">Algorithmic Problem-Solving</span>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h4>Other</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Technical Documentation</span>
+        <span class="skill-tag">Platform Hosting</span>
+        <span class="skill-tag">Government Digital Services</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== CERTIFICATIONS ===== -->
+  <h3 class="subsection-title"><i class="fas fa-certificate"></i> Certifications & Technical Training</h3>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+      <h5>Introduction to Cybersecurity</h5>
+      <div class="cert-issuer">Cisco</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fas fa-headset"></i></div>
+      <h5>IT Customer Support Basics</h5>
+      <div class="cert-issuer">Cisco</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fas fa-desktop"></i></div>
+      <h5>Operating System Support</h5>
+      <div class="cert-issuer">Cisco</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fas fa-lock"></i></div>
+      <h5>Security and Connectivity Support</h5>
+      <div class="cert-issuer">Cisco</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fas fa-mobile-alt"></i></div>
+      <h5>Using Computers and Mobile Devices</h5>
+      <div class="cert-issuer">Cisco</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+      <h5>Introduction to Networking</h5>
+      <div class="cert-issuer">Cisco</div>
+    </div>
+  </div>
+  
+  <!-- ===== PROJECTS ===== -->
+  <h3 class="subsection-title"><i class="fas fa-project-diagram"></i> Projects</h3>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-img"><i class="fas fa-graduation-cap"></i></div>
+      <div class="project-body">
+        <h4>School Management System</h4>
+        <p class="text-light">Developed a school management system to support the management of school-related information and administrative processes.</p>
+        <div class="project-tech">
+          <span>Java</span>
+          <span>SQL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-img"><i class="fas fa-brain"></i></div>
+      <div class="project-body">
+        <h4>MediPredict - Drug Recommendation System</h4>
+        <p class="text-light">Web-based drug recommendation system using Python and machine learning techniques to process health-related inputs.</p>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>SQL</span>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-img"><i class="fas fa-car"></i></div>
+      <div class="project-body">
+        <h4>VCH - Online Investment Platform</h4>
+        <p class="text-light">Web-based virtual investment platform enabling members to participate in vehicle-related investment activities.</p>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>SQL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-img"><i class="fas fa-user"></i></div>
+      <div class="project-body">
+        <h4>Personal Portfolio Website</h4>
+        <p class="text-light">Responsive portfolio website presenting technical skills, projects, education, and professional experience.</p>
+        <div class="project-tech">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Python/Flask</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== EDUCATION ===== -->
+  <h3 class="subsection-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>Bachelor of Science in Computer Science</h4>
+        <span class="company">Chuka University</span>
+      </div>
+      <div class="date">2022 - 2026 · Second Class Upper Division</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>Kenya Certificate of Secondary Education (KCSE)</h4>
+        <span class="company">Kimulot Boys High School</span>
+      </div>
+      <div class="date">2018 - 2022 · B+</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h4>Kenya Certificate of Primary Education (KCPE)</h4>
+        <span class="company">Tenduet Primary School</span>
+      </div>
+      <div class="date">2009 - 2017 · Average marks of 345</div>
+    </div>
+  </div>
+  
+  <!-- ===== PROFESSIONAL SKILLS ===== -->
+  <h3 class="subsection-title"><i class="fas fa-tools"></i> Professional Skills</h3>
+  <div class="skill-tags" style="margin-bottom: 20px;">
+    <span class="skill-tag">Network Troubleshooting</span>
+    <span class="skill-tag">Systems Administration</span>
+    <span class="skill-tag">CCTV Maintenance</span>
+    <span class="skill-tag">Government E-Services</span>
+    <span class="skill-tag">Civil Registration Services</span>
+    <span class="skill-tag">Web Design</span>
+    <span class="skill-tag">Algorithmic Problem-Solving</span>
+    <span class="skill-tag">Hardware Diagnostics</span>
+    <span class="skill-tag">Technical Documentation</span>
+    <span class="skill-tag">Customer and User Support</span>
+  </div>
+  
+  <!-- ===== LANGUAGES ===== -->
+  <h3 class="subsection-title"><i class="fas fa-language"></i> Languages</h3>
+  <div class="languages-grid">
+    <div class="language-item">
+      <span class="language-name">English</span>
+      <span class="language-level">Fluent</span>
+    </div>
+    <div class="language-item">
+      <span class="language-name">Kiswahili</span>
+      <span class="language-level">Fluent</span>
+    </div>
+    <div class="language-item">
+      <span class="language-name">Spanish</span>
+      <span class="language-level">Intermittent</span>
+    </div>
+  </div>
+  
+  <!-- ===== REFERENCES ===== -->
+  <h3 class="subsection-title"><i class="fas fa-address-book"></i> References</h3>
+  <div class="references-grid">
+    <div class="reference-card">
+      <h5>Emmanuel Osonga</h5>
+      <p class="text-light">CCTV and Network Installation Technician</p>
+      <p class="text-light"><i class="fas fa-phone"></i> 0769084122</p>
+      <p class="text-light"><i class="fas fa-envelope"></i> emmanueloloo592@gmail.com</p>
+    </div>
+    <div class="reference-card">
+      <h5>Julius Omondi</h5>
+      <p class="text-light">CCTV Installation Technician</p>
+      <p class="text-light"><i class="fas fa-phone"></i> +254113407237</p>
+      <p class="text-light"><i class="fas fa-envelope"></i> ogindijulius12@gmail.com</p>
+    </div>
+    <div class="reference-card">
+      <h5>Kevin Jack Odhiambo</h5>
+      <p class="text-light">Swift Broadband WiFi Installation Technician</p>
+      <p class="text-light"><i class="fas fa-phone"></i> 0759483904</p>
+    </div>
+  </div>
+  
+  <!-- ===== CONTACT CTA ===== -->
+  <div class="resume-download-cta">
+    <div class="cta-content">
+      <h3>Interested in working together?</h3>
+      <p>Download my full resume or get in touch to discuss your project.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:16px;">
+        <a href="{{ url_for('download_resume') }}" class="btn-primary">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+        <a href="{{ url_for('contact') }}" class="btn-outline">
+          <i class="fas fa-envelope"></i> Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
